@@ -1,0 +1,17 @@
+{
+  "name": "chrome-extension-librus",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "watch": "cross-env CHOKIDAR_USEPOLLING=1 CHOKIDAR_INTERVAL=200 browser-sync start --server \"src\" --startPath \"popup.html\" --files \"src/**/*\""
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "chrome-types": "^0.1.372",
+    "cross-env": "^10.0.0"
+  }
+}

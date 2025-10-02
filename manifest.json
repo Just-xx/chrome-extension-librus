@@ -1,10 +1,10 @@
 {
   "name": "Librus Plus",
-  "description": "Base Level Extension",
-  "version": "1.0",
+  "description": "TODO: NAPISAĆ OPIS",
+  "version": "0.1",
   "manifest_version": 3,
   "action": {
-    "default_popup": "./src/popup.html",
+    "default_popup": "./src/popup/popup.html",
     "default_icon": "librusplus.png"
   },
   "web_accessible_resources": [

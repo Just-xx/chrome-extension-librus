@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Librus Plus</title>
-    <link rel="stylesheet" href="assets/fontawesome-free-6.7.2-web/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/fontawesome-free-6.7.2-web/css/all.min.css" />
     <link rel="stylesheet" href="styles/popup/main.css" />
   </head>
   <body>
     <header>
       <div class="logo-container">
-        <img class="logo" src="assets/logo.svg" alt="librus plus" />
+        <img class="logo" src="../assets/logo.svg" alt="librus plus" />
         <div class="status">Niezalogowany do librus</div>
       </div>
       <div class="header-link-icons">
@@ -23,7 +23,7 @@
       </div>
     </header>
     <main>
-      <div class="sticky-tabs">
+      <!-- <div class="sticky-tabs">
         <button class="tab-btn active" data-tab="grades">
           <i class="fa-solid fa-user-graduate"></i>
         </button>
@@ -39,7 +39,7 @@
         <button class="tab-btn" data-tab="other">
           <i class="fa-solid fa-bolt"></i>
         </button>
-      </div>
+      </div> -->
       <h3>Ustawienia Librus+</h3>
       <div class="tab-btns">
         <button class="tab-btn active" data-tab="grades">
@@ -479,15 +479,16 @@
             title="Toggle this box"
           >
             <span class="sr-only">Toggle</span>
-          </button>
+          </button=>
         </div>
       </div>
     </main>
 
     <script src="scripts/handleOptionChanges.js"></script>
-    <script src="assets/easy-toggle-state.min.js"></script>
+    <script src="../assets/easy-toggle-state.min.js"></script>
     <script src="scripts/optionSwitchboxTweak.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/toggleActiveTab.js"></script>
+    <!-- <script src="scripts/handleStickyTab.js"></script> -->
   </body>
 </html>

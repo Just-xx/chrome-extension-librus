@@ -1,4 +1,4 @@
-console.log("✅ Content script loaded");
+console.log("[Librus Plus] ✅ Content script loaded");
 
 document.addEventListener("DOMContentLoaded", () => {
   loadAverageGrades();
@@ -24,28 +24,28 @@ function loadAverageGrades() {
   const logo = document.createElement("img");
   logo.src = chrome.runtime.getURL("src/assets/librusplus.png");
   logo.width = 20;
-  logo.classList.add('table-logo')
+  logo.classList.add("table-logo");
   logoTd.appendChild(logo);
 
   firstHalfTxtTd.textContent = "Średnia (okres 1):";
   firstHalfTxtTd.classList.add("table-text");
 
   firstHalfAvgTd.classList.add("table-avg");
-  firstHalfAvgTd.textContent = "4.32";
+  firstHalfAvgTd.textContent = "-";
   firstHalfAvgTd.colSpan = 2;
 
   secondHalfTxtTd.textContent = "Średnia (okres 2):";
   secondHalfTxtTd.classList.add("table-text");
 
   secondHalfAvgTd.classList.add("table-avg");
-  secondHalfAvgTd.textContent = "4.32";
+  secondHalfAvgTd.textContent = "-";
   secondHalfAvgTd.colSpan = 2;
 
   finalTxtTd.textContent = "Średnia:";
   finalTxtTd.classList.add("table-text");
 
   finalAvgTd.classList.add("table-avg");
-  finalAvgTd.textContent = "4.32";
+  finalAvgTd.textContent = "-";
 
   finalAvgTd.classList.add("center");
   secondHalfAvgTd.classList.add("center");
@@ -75,4 +75,24 @@ function loadAverageGrades() {
   averageTRow.classList.add("librus-plus");
 
   tbody.insertBefore(averageTRow, lastTRow);
+
+  countAvg();
+}
+
+function countAvg() {
+  let subjectRows = [...document.querySelectorAll(".container-background > table.decorated > tbody > tr")];
+
+  // get rid of "Zachowanie" row, subTables rows, librusplus row and empty rows
+  subjectRows = subjectRows.filter(tr => {
+    if (tr.getAttribute("name") === "przedmioty_all") return false;
+    if (tr.classList.contains("librus-plus")) return false;
+
+    const subjectName = tr.querySelector("td:nth-child(2)").textContent;
+    if (subjectName.includes("Zachowanie")) return false;
+
+    return true;
+  });
+
+  const avgsFirstHalf = subjectRows.reduce((trA, trB) => Number(trA.querySelector("td:nth-child(3)").textContent) + Number(trB.querySelector("td:nth-child(3)").textContent));
+  console.log(avgsFirstHalf);
 }

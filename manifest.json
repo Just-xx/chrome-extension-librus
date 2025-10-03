@@ -7,6 +7,15 @@
     "default_popup": "./src/popup/popup.html",
     "default_icon": "librusplus.png"
   },
+  "content_scripts": [
+    {
+      "js": ["src/content/content.js"],
+      "matches": ["https://*.librus.pl/*"]
+    }
+  ],
+  "background": {
+    "service_worker": "src/background/background.js"
+  },
   "web_accessible_resources": [
     {
       "resources": ["src/assets/*"],

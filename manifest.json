@@ -10,7 +10,9 @@
   "content_scripts": [
     {
       "js": ["src/content/content.js"],
-      "matches": ["https://*.librus.pl/*"]
+      "css": ["src/content/librusPlusStyles.css"],
+      "matches": ["https://*.librus.pl/*"],
+      "run_at": "document_start"
     }
   ],
   "background": {
@@ -19,7 +21,15 @@
   "web_accessible_resources": [
     {
       "resources": ["src/assets/*"],
-      "matches": ["<all_urls>"]
+      "matches": ["https://*.librus.pl/*"]
     }
+  ],
+   "permissions": [
+    "storage",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.librus.pl/*"
   ]
 }

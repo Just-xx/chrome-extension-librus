@@ -1,0 +1,19 @@
+td.table-avg,
+td.table-text {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  color: #63526b !important;
+}
+
+td.table-avg {
+  font-weight: 700;
+}
+
+tr.librus-plus {
+  background-color: #eee4f3 !important;
+}
+
+.table-logo {
+  opacity: 0.7;
+  user-select: none;
+}

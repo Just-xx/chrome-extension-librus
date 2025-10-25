@@ -1,35 +1,29 @@
 {
   "name": "Librus Plus",
-  "description": "TODO: NAPISAĆ OPIS",
+  "description": "NAPISAĆ OPIS",
   "version": "0.1",
   "manifest_version": 3,
   "action": {
-    "default_popup": "./src/popup/popup.html",
-    "default_icon": "librusplus.png"
+    "default_popup": "popup/index.html",
+    "default_icon": "assets/librusplus-icon.png"
   },
   "content_scripts": [
     {
-      "js": ["src/content/content.js"],
-      "css": ["src/content/librusPlusStyles.css"],
       "matches": ["https://*.librus.pl/*"],
+      "js": ["content/content.js"],
+      "css": ["css/content.css"],
       "run_at": "document_start"
     }
   ],
   "background": {
-    "service_worker": "src/background/background.js"
+    "service_worker": "background/background.js"
   },
   "web_accessible_resources": [
     {
-      "resources": ["src/assets/*"],
+      "resources": ["assets/*"],
       "matches": ["https://*.librus.pl/*"]
     }
   ],
-   "permissions": [
-    "storage",
-    "tabs",
-    "scripting"
-  ],
-  "host_permissions": [
-    "https://*.librus.pl/*"
-  ]
+  "permissions": ["storage", "tabs", "scripting"],
+  "host_permissions": ["https://*.librus.pl/*"]
 }

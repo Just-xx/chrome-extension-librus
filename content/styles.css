@@ -1,0 +1,37 @@
+
+/* AverageGrades */
+
+
+td.table-avg div {
+  font-weight: 700;
+  display: inline-block;
+  padding: 4px;
+  background-color: #decbe7;
+  border-radius: 4px 5px;
+}
+
+td.table-avg span {
+  font-weight: 400;
+  margin-right: 4px;
+}
+
+td.table-avg {
+  color: #63526b !important;
+}
+
+tr.librus-plus {
+  /* background-color: #eee4f3 !important; */
+}
+
+tr.librus-plus td {
+  padding: 6px !important;
+}
+
+.table-logo {
+  /* opacity: 0.7; */
+  user-select: none;
+}
+
+.grade-box {
+  border-radius: 3px;
+}

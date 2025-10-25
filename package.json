@@ -7,12 +7,17 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "watch-wsl": "cross-env CHOKIDAR_USEPOLLING=1 CHOKIDAR_INTERVAL=200 browser-sync start --server \"src\" --startPath \"popup/popup.html\" --files \"src/**/*\"",
-    "watch": "browser-sync start --server \"src\" --startPath \"popup/popup.html\" --files \"src/**/*\""
+    "watch-popup-wsl": "cross-env CHOKIDAR_USEPOLLING=1 CHOKIDAR_INTERVAL=200 browser-sync start --server \"src\" --startPath \"popup/popup.html\" --files \"src/**/*\"",
+    "watch-popup": "browser-sync start --server \"src\" --startPath \"popup/popup.html\" --files \"src/**/*\"",
+    "build": "vite build",
+    "watch": "vite build --watch"
   },
   "devDependencies": {
     "browser-sync": "^3.0.4",
     "chrome-types": "^0.1.372",
-    "cross-env": "^10.0.0"
+    "cross-env": "^10.0.0",
+    "jest": "^30.2.0",
+    "vite": "^7.1.9",
+    "vite-plugin-static-copy": "^3.1.3"
   }
 }

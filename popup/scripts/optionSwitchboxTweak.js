@@ -7,7 +7,7 @@ document.querySelectorAll(".option").forEach(opt => {
 
 document.querySelectorAll(".switchbox").forEach(sbox => {
   sbox.addEventListener("click", () => {
-    const name = sbox.id;
+    const name = sbox.dataset.optId;
     const newState = !sbox.classList.contains("is-pressed");
 
     window.dispatchEvent(new CustomEvent("optionUpdate", { detail: { name, newState } }));
